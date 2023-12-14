@@ -1,0 +1,11 @@
+.inner-place {
+    @apply absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+}
+
+.custom-text-black {
+    @apply text-black text-2xl font-bold text-center w-full
+}
+
+.custom-text-white {
+    @apply text-white text-2xl font-bold text-center w-full
+}
