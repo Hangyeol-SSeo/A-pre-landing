@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Submission Box</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Additional styles if needed */
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+<div class="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full">
+    <form id="emailForm" class="flex flex-col space-y-4">
+        <input type="email" id="email" placeholder="이메일을 입력해주세요" class="border-2 border-gray-300 p-2 rounded-md focus:outline-none focus:border-blue-500" required>
+        <button type="submit" class="bg-blue-500 text-white font-bold p-2 rounded-md hover:bg-blue-600">확인</button>
+    </form>
+</div>
+
+<script>
+    // JavaScript to handle the form submission
+    document.getElementById('emailForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const email = document.getElementById('email').value;
+        // Implement the email submission logic here
+        alert('Email submitted: ' + email);
+        // Reset the form after submission
+        event.target.reset();
+    });
+</script>
+</body>
+</html>
