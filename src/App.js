@@ -19,7 +19,7 @@ function App() {
     const toggleLog = async () => {
         setIsActive(!isActive);
 
-        const response = await fetch(SERVER_URL, {
+        const response = await fetch(SERVER_URL+'/log', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ function App() {
 
         event.preventDefault();
         const email = event.target.email.value;
-        const response = await fetch(SERVER_URL, {
+        const response = await fetch(SERVER_URL+'/email', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
