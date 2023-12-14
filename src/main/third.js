@@ -53,7 +53,7 @@ function Third({onToggle}) {
                     <path d="M105.728 9.72791L115.728 19.7279" stroke="white" stroke-width="3" stroke-linecap="round"/>
                 </svg>
 
-                <button onClick={onToggle} className='button block mx-auto my-10 hover:bg-blue-300'><span className='text-black text-xl font-bold text-center w-full'>심판을 이용해 수준에<br/>맞는 매치 찾으러 가기</span></button>
+                <button onClick={onToggle} className='button block mx-auto my-10 hover:bg-blue-300 text-black text-xl font-bold text-center'>심판을 이용해 수준에<br/>맞는 매치 찾으러 가기</button>
             </main>
         </div>
     );
