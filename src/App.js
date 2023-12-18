@@ -1,5 +1,5 @@
 import './App.css';
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -52,6 +52,35 @@ function App() {
             alert('이메일 입력 실패');
         }
     };
+
+    // 전체 로그
+    const sendLogToServer = async () => {
+        const userData = {
+            browserInfo: navigator.userAgent,
+            accessTime: new Date().toISOString()
+        };
+
+        try {
+            const response = await fetch(SERVER_URL+'/access', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(userData)
+            });
+
+            if (!response.ok) {
+                throw new Error('Log data could not be sent');
+            }
+        } catch (error) {
+            console.error('Error sending log data', error);
+        }
+    };
+
+    useEffect(() => {
+        sendLogToServer();
+    }, []);
+
 
     return (
         <div>
